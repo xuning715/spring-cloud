@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/mvc
+                           http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                           http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <bean id="constant" class="com.x.security.util.Constant">
+        <property name="applicationId">
+            <value>2</value>
+        </property>
+        <property name="loginUrl">
+            <value>/controller/getUserSession</value>
+        </property>
+        <property name="logoutUrl">
+            <value>/index.jsp</value>
+        </property>
+        <property name="exceptionUrl">
+            <value>/common/exception.jsp</value>
+        </property>
+        <property name="securityAccountErrorMessage">
+            <value>用户名或密码错误</value>
+        </property>
+        <property name="securitySessionNullMessage">
+            <value>登陆超时</value>
+        </property>
+        <property name="securitySessionNotMessage">
+            <value>用户无访问权限</value>
+        </property>
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+                    </list>
+                </property>
+                <property name="features">  
+			        <array value-type="com.alibaba.fastjson.serializer.SerializerFeature">  
+			           <value>DisableCircularReferenceDetect</value>  
+			        </array>  
+                </property>
+            </bean>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="prefixJson" value="false" />
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>application/x-www-form-urlencoded;charset=UTF-8</value>
+                    </list>
+                </property>
+                <property name="objectMapper">
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <property name="dateFormat">
+                            <bean class="java.text.SimpleDateFormat">
+                                <constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+                            </bean>
+                        </property>
+                        <property name="serializationInclusion">
+                            <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <bean id="DisableCircularReferenceDetect" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">  
+        <property name="staticField" value="com.alibaba.fastjson.serializer.SerializerFeature.DisableCircularReferenceDetect"></property>  
+    </bean>
+    <mvc:interceptors>
+        <!--对所有的请求记性拦截-->
+        <!--<beans:bean class="com.x.security.interceptor.JWTInterceptor"/>-->
+        <!--对特定的请求进行拦截-->
+        <mvc:interceptor>
+            <mvc:mapping path="/LoginTest"/>
+            <bean class="com.x.security.interceptor.JWTInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/" />
+        <!--<property name="suffix" value=".jsp" />-->
+    </bean>
+	<!-- 文件上传设置 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!--1024*1000=1000K -->
+		<property name="maxUploadSize" value="51200000" />
+		<!--resolveLazily属性启用是为了推迟文件解析，以便在UploadAction 中捕获文件大小异常 -->
+		<property name="resolveLazily" value="true" />
+	</bean>
+	<!-- Mapping exception to the handler view -->
+	<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<!-- to /commons/error.jsp -->
+		<property name="defaultErrorView" value="/error/exception.jsp" />
+		<property name="defaultStatusCode" value="500"></property>
+		<property name="statusCodes">
+			<props>
+				<prop key="/common/500.html">500</prop>
+				<prop key="/common/404.html">404</prop>
+			</props>
+		</property>
+		<!-- 设置日志输出级别，不定义则默认不输出警告等错误日志信息 -->
+		<property name="warnLogCategory" value="WARN"></property>
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">/common/exception.jsp</prop>
+				<prop key="java.lang.RuntimeException">/common/exception.jsp</prop>
+				<prop key="org.springframework.web.multipart.MaxUploadSizeExceededException">
+					/common/exception.jsp
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+    <import resource="applicationContext-consumer.xml"/>
+    <context:component-scan base-package="com.x.security.controller" />
+    <context:component-scan base-package="com.redcube.crm.controller" />
+    <context:component-scan base-package="com.redcube.dc.controller" />
+</beans>

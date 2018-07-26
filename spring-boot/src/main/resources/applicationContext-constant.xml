@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+    <bean id="redcubeConstant" class="com.x.application.util.Constant">
+        <property name="smsUrl" value="${sms.url}"/>
+        <property name="smsParams">
+            <map>
+                <entry key="comid" value="${sms.comid}"></entry>
+                <entry key="username" value="${sms.username}"></entry>
+                <entry key="userpwd" value="${sms.userpwd}"></entry>
+                <entry key="smsnumber" value="${sms.number}"></entry>
+                <entry key="handtel" value=""></entry>
+                <entry key="sendcontent" value=""></entry>
+                <entry key="sendtime" value=""></entry>
+            </map>
+        </property>
+    </bean>
+    <bean id="securityConstant" class="com.x.security.util.Constant">
+        <property name="applicationId">
+            <value>2</value>
+        </property>
+        <property name="loginUrl">
+            <value>/controller/getUserSession</value>
+        </property>
+        <property name="logoutUrl">
+            <value>/index.jsp</value>
+        </property>
+        <property name="exceptionUrl">
+            <value>/common/exception.jsp</value>
+        </property>
+        <property name="securityAccountErrorMessage">
+            <value>用户名或密码错误</value>
+        </property>
+        <property name="securitySessionNullMessage">
+            <value>登陆超时</value>
+        </property>
+        <property name="securitySessionNotMessage">
+            <value>用户无访问权限</value>
+        </property>
+    </bean>
+
+</beans>
