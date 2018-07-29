@@ -11,14 +11,15 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 //@EnableCaching
-@EnableRedisHttpSession
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 60)
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
 @EnableCircuitBreaker
 @EnableDubboConfiguration
 @Configuration
-@PropertySource("file:./conf/application.properties")
+@PropertySource("file:application.properties")
+//@PropertySource("classpath:application.properties")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

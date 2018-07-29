@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class HystrixConf {
+public class HystrixConfig {
     @Bean
     public HystrixMetricsStreamServlet hystrixMetricsStreamServlet() {
         return new HystrixMetricsStreamServlet();

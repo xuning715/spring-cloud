@@ -2,6 +2,7 @@ package com.x.application.controller;
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
+import org.apache.tomcat.util.http.fileupload.RequestContext;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 
@@ -11,11 +12,20 @@ public class HystrixFallback {
 
     private static ViewResult viewResult = new ViewResult(0, "服务异常", null);
 
-    public ViewResult fallbackConsumer(ViewParam viewParam) {
+    public ViewResult fallbackConsumer(ViewParam viewParam, Throwable throwable) {
         System.out.println("==================================fallback==" + (viewParam.getFlag()));
-        logger.error(viewResult.getMessage());
-        logger.info(viewResult.getMessage());
+//        throwable = this.getOriginException(throwable);
+        logger.error(throwable.getMessage());
+//        logger.info(viewResult.getMessage());
 //        throw new BusinessException(viewResult.getMessage());
         return viewResult;
+    }
+
+    private Throwable getOriginException(Throwable e) {
+        e = e.getCause();
+        while (e.getCause() != null) {
+            e = e.getCause();
+        }
+        return e;
     }
 }

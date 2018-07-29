@@ -8,13 +8,33 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.filter.DelegatingFilterProxy;
 
 @Component
 @Configuration
 @ImportResource(locations= {"classpath:applicationContext.xml"})
 public class Conf {
+
+//    @Bean
+//    public FilterRegistrationBean corsFilter() {
+//        CorsConfiguration config = new CorsConfiguration();
+//        config.setAllowCredentials(true);
+//        config.addAllowedOrigin("*");
+//        config.addAllowedMethod("*");
+//        config.addAllowedHeader("*");
+//        config.addExposedHeader("*");
+//
+//        UrlBasedCorsConfigurationSource configSource = new UrlBasedCorsConfigurationSource();
+//        configSource.registerCorsConfiguration("/**", config);
+//        FilterRegistrationBean registrationBean = new FilterRegistrationBean(new CorsFilter(configSource));
+//        registrationBean.setOrder(1);
+//        return registrationBean;
+//    }
+
     @Bean
     public FilterRegistrationBean characterEncodeingFilterRegistration() {
         FilterRegistrationBean registration = new FilterRegistrationBean();
@@ -26,6 +46,8 @@ public class Conf {
         registration.setOrder(1);
         return registration;
     }
+
+
 
 //    @Bean
 //    public FilterRegistrationBean springSessionRepositoryFilterRegistration() {
