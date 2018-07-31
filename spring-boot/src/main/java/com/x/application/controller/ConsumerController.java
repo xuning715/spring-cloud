@@ -2,12 +2,13 @@ package com.x.application.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import com.alibaba.fastjson.JSON;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.x.application.config.Conf;
+import com.x.application.model.ViewParam;
+import com.x.application.model.ViewResult;
 import com.x.security.rpc.SecurityRpcService;
 import com.x.security.model.Application;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,18 +29,20 @@ import java.util.Map;
 //)
 public class ConsumerController extends HystrixFallback {
 
-    @Autowired
-    private Conf applicationConfig;
-
 //    @Value("${server.port}")
 //    private String port;
 
-    @Reference(interfaceName = "com.x.security.rpc.SecurityRpcService")
+    @Reference
     private SecurityRpcService securityRpcService;
+
+//    @Reference(interfaceName = "com.x.bpm.rpc.BpmRpcService")
+//    private BpmRpcService bpmRpcService;
 
     @RequestMapping(value = "/test")
     @HystrixCommand(fallbackMethod = "fallbackConsumer")
     public ViewResult test(ViewParam viewParam) throws Exception {
+        System.out.println("=============json=====================" + JSON.toJSONString(viewParam));
+
         if (viewParam.getFlag() == 2) {
             System.out.println("==================================" + 2);
             throw new RuntimeException("fallback");
@@ -53,6 +56,16 @@ public class ConsumerController extends HystrixFallback {
 //        AsyncResult<List<Application>> asyncResult = new AsyncResult<List<Application>>() {
 //            @Override
 //            public List<Application> invoke() {
+//        StateMap stateMap = new StateMap();
+//        stateMap.putState("intentionState", 20);
+//        Rule rule = new Rule();
+//        rule.setApplicationId("171114085301365");
+//        rule.setProcessId(1);
+//        List<Operation>  operationList = bpmRpcService.selectOperationList(stateMap, rule);
+//        for (Operation operation : operationList) {
+//            System.out.println(operation.getOperationName());
+//        }
+
         Application application = new Application();
         List<Application> list = securityRpcService.selectApplicationList(application);
         ViewResult viewResult = new ViewResult();

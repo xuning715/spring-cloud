@@ -7,28 +7,25 @@ import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 //@EnableCaching
-@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 60)
 @SpringBootApplication
 @EnableDiscoveryClient
 @EnableHystrix
 @EnableCircuitBreaker
+@PropertySource("file:application.properties")
 @EnableDubboConfiguration
 @Configuration
-@PropertySource("file:application.properties")
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds = 60, redisNamespace = "consumer")
+//@ImportResource(locations= {"classpath:applicationContext.xml"})
 //@PropertySource("classpath:application.properties")
 public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-//    @Bean
-//    public HystrixCommandAspect hystrixCommandAspect() {
-//        return new HystrixCommandAspect();
-//    }
 
 //    @Bean
 //    public RemoteIpFilter remoteIpFilter() {
@@ -53,13 +50,6 @@ public class Application {
 //        registration.addInitParameter("preferDataUrlSchema", "false");
 //        registration.addUrlMappings("/dwr/*");
 //        registration.setOrder(10);
-//        return registration;
-//    }
-
-//    @Bean
-//    public ServletListenerRegistrationBean<ContextLoaderListener> contextLoaderListenerRegistrationBean() {
-//        ServletListenerRegistrationBean registration = new ServletListenerRegistrationBean();
-//        registration.setListener(new ContextLoaderListener());
 //        return registration;
 //    }
 

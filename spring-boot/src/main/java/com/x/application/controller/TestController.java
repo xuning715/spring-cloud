@@ -1,6 +1,8 @@
 package com.x.application.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.x.application.model.ViewParam;
+import com.x.application.model.ViewResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
