@@ -25,7 +25,6 @@
         <module name="spring-boot" />
         <module name="spring-boot-admin" />
         <module name="spring-boot-webflux" />
-        <module name="spring-boot-webflux-parent" />
         <module name="spring-cloud-dubbo-consumer" />
         <module name="spring-cloud-eureka" />
         <module name="spring-cloud-hystrix-dashboard-turbine" />

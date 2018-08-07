@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/spring-boot/spring-boot.iml" filepath="$PROJECT_DIR$/spring-boot/spring-boot.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-admin/spring-boot-admin.iml" filepath="$PROJECT_DIR$/spring-boot-admin/spring-boot-admin.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-boot-web-parent/spring-boot-web-parent.iml" filepath="$PROJECT_DIR$/spring-boot-web-parent/spring-boot-web-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-webflux/spring-boot-webflux.iml" filepath="$PROJECT_DIR$/spring-boot-webflux/spring-boot-webflux.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-boot-webflux-parent/spring-boot-webflux-parent.iml" filepath="$PROJECT_DIR$/spring-boot-webflux-parent/spring-boot-webflux-parent.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring-cloud-hystrix-dashboard-turbine/spring-cloud-hystrix-dashboard-turbine.iml" filepath="$PROJECT_DIR$/spring-cloud-hystrix-dashboard-turbine/spring-cloud-hystrix-dashboard-turbine.iml" />
