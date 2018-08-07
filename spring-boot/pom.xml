@@ -5,7 +5,7 @@
 
     <parent>
         <groupId>spring-cloud</groupId>
-        <artifactId>spring-boot-parent</artifactId>
+        <artifactId>spring-boot-web-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
@@ -14,42 +14,16 @@
     <artifactId>spring-boot</artifactId>
     <packaging>jar</packaging>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <jest.version>5.3.3</jest.version>
-        <log4j2.version>2.9.1</log4j2.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.x</groupId>
             <artifactId>bpm-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-        </plugins>
-    </build>
-
 
 </project>

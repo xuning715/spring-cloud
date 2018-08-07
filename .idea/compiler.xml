@@ -24,9 +24,12 @@
         <processorPath useClasspath="true" />
         <module name="spring-boot" />
         <module name="spring-boot-admin" />
+        <module name="spring-boot-webflux" />
+        <module name="spring-boot-webflux-parent" />
         <module name="spring-cloud-dubbo-consumer" />
         <module name="spring-cloud-eureka" />
         <module name="spring-cloud-hystrix-dashboard-turbine" />
+        <module name="spring-cloud-zipkin" />
         <module name="spring-cloud-zuul" />
       </profile>
     </annotationProcessing>
@@ -35,9 +38,13 @@
       <module name="spring-boot-admin" target="1.8" />
       <module name="spring-boot-consumer" target="1.8" />
       <module name="spring-boot-parent" target="1.8" />
+      <module name="spring-boot-web-parent" target="1.8" />
+      <module name="spring-boot-webflux" target="1.8" />
+      <module name="spring-boot-webflux-parent" target="1.8" />
       <module name="spring-cloud-dubbo-consumer" target="1.8" />
       <module name="spring-cloud-eureka" target="1.8" />
       <module name="spring-cloud-hystrix-dashboard-turbine" target="1.8" />
+      <module name="spring-cloud-zipkin" target="1.8" />
       <module name="spring-cloud-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -7,11 +7,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public abstract class HystrixFallback {
-    protected Logger logger = LoggerFactory.getLogger(getClass());
+    protected Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private static ViewResult viewResult = new ViewResult(0, "服务异常", null);
+    private final static ViewResult viewResult = new ViewResult(0, "服务异常", null);
 
-    public ViewResult fallbackConsumer(ViewParam viewParam, Throwable throwable) {
+    public <T extends ViewParam> ViewResult fallbackConsumer(T viewParam, Throwable throwable) {
         logger.error(JSON.toJSONString(viewParam), throwable);
         return viewResult;
     }

@@ -1,14 +1,13 @@
 package com.x.application.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-
 import com.alibaba.fastjson.JSON;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.x.application.model.MyParam;
 import com.x.application.model.ViewParam;
 import com.x.application.model.ViewResult;
-import com.x.security.rpc.SecurityRpcService;
 import com.x.security.model.Application;
-
+import com.x.security.rpc.SecurityRpcService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -80,17 +79,17 @@ public class ConsumerController extends HystrixFallback {
 	@RequestMapping(value = "/first")
     public Map<String, Object> firstResp (HttpServletRequest request){
         Map<String, Object> map = new HashMap<>();
-        request.getSession().setAttribute("request Url", request.getRequestURL());  
-        map.put("request Url", request.getRequestURL());  
-        return map;  
-    }  
+        request.getSession().setAttribute("request Url", request.getRequestURL());
+        map.put("request Url", request.getRequestURL());
+        return map;
+    }
   
     @RequestMapping(value = "/sessions")
-    public Object sessions (HttpServletRequest request){  
-        Map<String, Object> map = new HashMap<>();  
-        map.put("sessionId", request.getSession().getId());  
+    public Object sessions (HttpServletRequest request){
+        Map<String, Object> map = new HashMap<>();
+        map.put("sessionId", request.getSession().getId());
         map.put("message", request.getSession().getAttribute("request Url"));
-        return map;  
-    }  
+        return map;
+    }
 
 }

@@ -3,11 +3,12 @@ package com.x.application;
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
@@ -20,44 +21,14 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableDubboConfiguration
 @Configuration
 @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 60, redisNamespace = "consumer")
-//@ImportResource(locations= {"classpath:applicationContext.xml"})
-//@PropertySource("classpath:application.properties")
-public class Application {
+public class Application {//extends SpringBootServletInitializer {
+
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+//        return application.sources(Application.class);
+//    }
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
-
-//    @Bean
-//    public RemoteIpFilter remoteIpFilter() {
-//        return new RemoteIpFilter();
-//    }
-
-//    @Bean
-//    public ServletRegistrationBean dwrServletRegistrationBean() {
-//        ServletRegistrationBean registration = new ServletRegistrationBean();
-//        registration.setName("dwr-invoker");
-//        registration.setServlet(new DwrSpringServlet());
-//        registration.addInitParameter("fileUploadMaxBytes", "25000");
-//        registration.addInitParameter("debug", "false");
-//        registration.addInitParameter("accessLogLevel", "EXCEPTION");
-//        registration.addInitParameter("allowScriptTagRemoting", "true");
-//        registration.addInitParameter("crossDomainSessionSecurity", "false");
-//        registration.addInitParameter("allowGetForSafariButMakeForgeryEasier", "true");
-//        registration.addInitParameter("activeReverseAjaxEnabled", "true");
-//        registration.addInitParameter("initApplicationScopeCreatorsAtStartup", "true");
-//        registration.addInitParameter("jsonRpcEnabled", "true");
-//        registration.addInitParameter("jsonpEnabled", "true");
-//        registration.addInitParameter("preferDataUrlSchema", "false");
-//        registration.addUrlMappings("/dwr/*");
-//        registration.setOrder(10);
-//        return registration;
-//    }
-
-//    @Bean
-//    public ServletListenerRegistrationBean<DwrListener> dwrListenerRegistrationBean() {
-//        ServletListenerRegistrationBean registration = new ServletListenerRegistrationBean();
-//        registration.setListener(new DwrListener());
-//        return registration;
-//    }
-
 }
