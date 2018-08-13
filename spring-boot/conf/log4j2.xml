@@ -48,7 +48,7 @@
         </RollingRandomAccessFile>
     </Appenders>
     <Loggers>
-        <logger name="org.springframework" level="ERROR"/>
+        <logger name="org.springframework" level="INFO"/>
         <logger name="org.directwebremoting" level="ERROR"/>
         <logger name="com.x.application.controller" level="ERROR" includeLocation="true"/>
         <root level="ERROR">

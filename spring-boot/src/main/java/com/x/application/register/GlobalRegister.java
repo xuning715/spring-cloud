@@ -16,8 +16,19 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.filter.CorsFilter;
 
 @Configuration
-@ImportResource(locations= {"classpath:applicationContext.xml"})
+@ImportResource(locations = {"classpath:applicationContext.xml"})
 public class GlobalRegister {
+
+    @Value("${spring.welcome}")
+    private String welcome;
+
+    public void setWelcome(String welcome) {
+        this.welcome = welcome;
+        System.out.println(welcome);
+    }
+
+    public GlobalRegister() {
+    }
 
     @Bean
     public HystrixMetricsStreamServlet hystrixMetricsStreamServlet() {
@@ -102,25 +113,4 @@ public class GlobalRegister {
         return registrationBean;
     }
 
-    @Value("${mysql.url}")
-    private String host;
-
-    @Value("${mysql.username}")
-    private String port;
-
-    public String getHost() {
-        return host;
-    }
-
-    public void setHost(String host) {
-        this.host = host;
-    }
-
-    public String getPort() {
-        return port;
-    }
-
-    public void setPort(String port) {
-        this.port = port;
-    }
 }

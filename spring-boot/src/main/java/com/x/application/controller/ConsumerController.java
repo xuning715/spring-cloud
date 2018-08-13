@@ -66,6 +66,8 @@ public class ConsumerController extends HystrixFallback {
 //        }
 
         Application application = new Application();
+        application.setApplicationId("1");
+        application.setApplicationName("权限管理系统");
         List<Application> list = securityRpcService.selectApplicationList(application);
         ViewResult viewResult = new ViewResult();
         viewResult.setCode(1);

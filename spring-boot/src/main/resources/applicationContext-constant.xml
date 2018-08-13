@@ -3,19 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
-    <bean id="redcubeConstant" class="com.x.application.util.Constant">
-        <property name="smsUrl" value="${sms.url}"/>
-        <property name="smsParams">
-            <map>
-                <entry key="comid" value="${sms.comid}"></entry>
-                <entry key="username" value="${sms.username}"></entry>
-                <entry key="userpwd" value="${sms.userpwd}"></entry>
-                <entry key="smsnumber" value="${sms.number}"></entry>
-                <entry key="handtel" value=""></entry>
-                <entry key="sendcontent" value=""></entry>
-                <entry key="sendtime" value=""></entry>
-            </map>
-        </property>
+    <bean id="consumerConstant" class="com.x.application.util.Constant">
     </bean>
     <bean id="securityConstant" class="com.x.security.util.Constant">
         <property name="applicationId">
