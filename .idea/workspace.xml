@@ -1072,7 +1072,7 @@
       <workItem from="1537030583245" duration="2771000" />
       <workItem from="1537078216360" duration="861000" />
       <workItem from="1537079354932" duration="4875000" />
-      <workItem from="1537106118938" duration="11799000" />
+      <workItem from="1537106118938" duration="11817000" />
     </task>
     <task id="LOCAL-00001" summary="springcloud">
       <created>1532239695028</created>
@@ -1151,11 +1151,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537118294018</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="springcloud">
+      <created>1537118366437</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1537118366437</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247103000" />
+    <option name="totallyTimeSpent" value="247121000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
