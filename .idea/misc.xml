@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/spring-boot-webflux/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-web-parent/pom.xml" />
         <option value="$PROJECT_DIR$/spring-boot-webflux-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-cloud-config/pom.xml" />
       </list>
     </option>
   </component>

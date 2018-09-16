@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: com.x:xsecurity-api:1.0-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180731.071113-63.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180914.065802-1.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180731.071113-63-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180914.065802-1-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180731.071113-63-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/com/x/xsecurity-api/1.0-SNAPSHOT/xsecurity-api-1.0-20180914.065802-1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

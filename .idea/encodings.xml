@@ -6,6 +6,7 @@
     <file url="file://$PROJECT_DIR$/spring-boot-web-parent" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-webflux" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-boot-webflux-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-cloud-config" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-eureka" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-hystrix-dashboard-turbine" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-cloud-zipkin" charset="UTF-8" />
