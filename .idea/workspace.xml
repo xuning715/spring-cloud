@@ -2,28 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f254430-c022-4d74-a5ce-dcd0dca17eff" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-boot/conf/spring-boot-pro.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/register/SpringBootDwrServletRegister.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/register/SpringDwrContainer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/register/SpringDwrServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/spring-boot/startup.bat" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_x_bpm_api_1_0_SNAPSHOT.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spring-boot/spring-dubbo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spring-boot/src/main/resources/bootstrap.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/spring-cloud-zipkin/src/main/java/application/Application.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-web-parent/pom.xml" afterPath="$PROJECT_DIR$/spring-boot-web-parent/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot-web-parent/spring-boot-web-parent.iml" afterPath="$PROJECT_DIR$/spring-boot-web-parent/spring-boot-web-parent.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/application.properties" afterPath="$PROJECT_DIR$/spring-boot/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/pom.xml" afterPath="$PROJECT_DIR$/spring-boot/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/spring-boot.iml" afterPath="$PROJECT_DIR$/spring-boot/spring-boot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/Application.java" afterPath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/controller/ConsumerController.java" afterPath="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/controller/ConsumerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/spring-boot/src/main/resources/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spring-boot/startup.sh" afterPath="$PROJECT_DIR$/spring-boot/startup.sh" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spring-boot/conf/applicationContext.properties" afterPath="$PROJECT_DIR$/spring-boot/conf/spring-boot-dev.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spring-boot/conf/dwr-spring-config.xml" afterPath="$PROJECT_DIR$/spring-boot/src/main/resources/dwr-spring-config.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/spring-boot/conf/log4j2.xml" afterPath="$PROJECT_DIR$/spring-boot/log4j2.xml" />
     </list>
     <list id="c5216f28-03df-426f-a051-784da3d96847" name="New changelist" comment="" />
     <ignored path="spring-cloud.iws" />
@@ -88,11 +67,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spring-boot.iml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spring-boot.iml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/spring-boot/spring-boot.iml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="startup.bat" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dubbo-sentinel/startup.bat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="127" selection-start-line="0" selection-start-column="127" selection-end-line="0" selection-end-column="127" />
               <folding />
             </state>
           </provider>
@@ -269,6 +258,7 @@
         <option value="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/Application.java" />
         <option value="$PROJECT_DIR$/spring-boot/src/main/java/com/x/application/controller/ConsumerController.java" />
         <option value="$PROJECT_DIR$/spring-boot/application.properties" />
+        <option value="$PROJECT_DIR$/dubbo-sentinel/startup.bat" />
       </list>
     </option>
   </component>
@@ -490,6 +480,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="spring-boot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring-cloud" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dubbo-sentinel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1068,7 +1072,7 @@
       <workItem from="1537030583245" duration="2771000" />
       <workItem from="1537078216360" duration="861000" />
       <workItem from="1537079354932" duration="4875000" />
-      <workItem from="1537106118938" duration="11699000" />
+      <workItem from="1537106118938" duration="11799000" />
     </task>
     <task id="LOCAL-00001" summary="springcloud">
       <created>1532239695028</created>
@@ -1140,11 +1144,18 @@
       <option name="project" value="LOCAL" />
       <updated>1537084944073</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="springcloud">
+      <created>1537118294018</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1537118294018</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247003000" />
+    <option name="totallyTimeSpent" value="247103000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -7330,7 +7341,7 @@
         <state relative-caret-position="238">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -7423,6 +7434,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dubbo-sentinel/startup.bat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="127" selection-start-line="0" selection-start-column="127" selection-end-line="0" selection-end-column="127" />
           <folding />
         </state>
       </provider>
