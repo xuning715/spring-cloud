@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4f254430-c022-4d74-a5ce-dcd0dca17eff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="4f254430-c022-4d74-a5ce-dcd0dca17eff" name="Default" comment="" />
     <list id="c5216f28-03df-426f-a051-784da3d96847" name="New changelist" comment="" />
     <ignored path="spring-cloud.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1072,7 +1070,7 @@
       <workItem from="1537030583245" duration="2771000" />
       <workItem from="1537078216360" duration="861000" />
       <workItem from="1537079354932" duration="4875000" />
-      <workItem from="1537106118938" duration="11817000" />
+      <workItem from="1537106118938" duration="11868000" />
     </task>
     <task id="LOCAL-00001" summary="springcloud">
       <created>1532239695028</created>
@@ -1162,7 +1160,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247121000" />
+    <option name="totallyTimeSpent" value="247172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
