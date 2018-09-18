@@ -3,8 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                            http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
-    <bean id="consumerConstant" class="com.x.application.util.Constant">
-    </bean>
     <bean id="securityConstant" class="com.x.security.util.Constant">
         <property name="applicationId">
             <value>2</value>

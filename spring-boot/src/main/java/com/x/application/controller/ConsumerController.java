@@ -82,7 +82,7 @@ public class ConsumerController extends HystrixFallback {
 
 	@RequestMapping(value = "/first")
     public Map<String, Object> firstResp (HttpServletRequest request){
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         request.getSession().setAttribute("request Url", request.getRequestURL());
         map.put("request Url", request.getRequestURL());
         return map;
@@ -90,7 +90,7 @@ public class ConsumerController extends HystrixFallback {
   
     @RequestMapping(value = "/sessions")
     public Object sessions (HttpServletRequest request){
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         map.put("sessionId", request.getSession().getId());
         map.put("message", request.getSession().getAttribute("request Url"));
         return map;

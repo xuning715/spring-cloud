@@ -6,8 +6,4 @@
     <import resource="classpath:applicationContext-exception.xml" />
     <import resource="classpath:applicationContext-constant.xml" />
     <import resource="classpath:applicationContext-redis.xml" />
-    <!--<import resource="applicationContext-jest.xml" />-->
-    <!--<import resource="applicationContext-db.xml" />-->
-    <!--<import resource="applicationContext-transaction.xml" />-->
-    <!--<import resource="file:./conf/applicationContext-component.xml" />-->
 </beans>
