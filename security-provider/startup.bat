@@ -1,0 +1,1 @@
+java -Dcsp.sentinel.api.port=8721 -Dcsp.sentinel.dashboard.server=localhost:8080 -Dproject.name=provider-security -jar security-provider-1.0-SNAPSHOT.jar

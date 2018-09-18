@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="securityMasterDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${mysql.driverClassName}" />
+
+        <property name="url" value="${mysql.url.master}" />
+        <property name="username" value="${mysql.username.master}" />
+        <property name="password" value="${mysql.password.master}" />
+
+        <property name="initialSize" value="${mysql.initialSize}" />
+        <property name="minIdle" value="${mysql.minIdle}" />
+        <property name="maxActive" value="${mysql.maxActive}" />
+
+        <property name="maxWait" value="${mysql.maxWait}" />
+        <property name="minEvictableIdleTimeMillis" value="${mysql.minEvictableIdleTimeMillis}" />
+
+        <property name="validationQuery" value="${mysql.validationQuery}" />
+        <property name="testWhileIdle" value="${mysql.testWhileIdle}" />
+        <property name="testOnBorrow" value="${mysql.testOnBorrow}" />
+        <property name="testOnReturn" value="${mysql.testOnReturn}" />
+
+        <property name="poolPreparedStatements" value="${mysql.poolPreparedStatements}" />
+        <property name="maxOpenPreparedStatements" value="${mysql.maxOpenPreparedStatements}" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="${mysql.maxPoolPreparedStatementPerConnectionSize}" />
+        <property name="removeAbandoned" value="${mysql.removeAbandoned}" />
+        <property name="removeAbandonedTimeout" value="${mysql.removeAbandonedTimeout}" />
+        <property name="timeBetweenLogStatsMillis" value="${mysql.timeBetweenLogStatsMillis}" />
+        <property name="timeBetweenEvictionRunsMillis" value="${mysql.timeBetweenEvictionRunsMillis}" />
+        <property name="logAbandoned" value="${mysql.logAbandoned}" />
+        <!--property name="filters" value="${mysql.filters}" /-->
+    </bean>
+    <bean id="securitySlaveDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="driverClassName" value="${mysql.driverClassName}" />
+
+        <property name="url" value="${mysql.url.slave}" />
+        <property name="username" value="${mysql.username.slave}" />
+        <property name="password" value="${mysql.password.slave}" />
+
+        <property name="initialSize" value="${mysql.initialSize}" />
+        <property name="minIdle" value="${mysql.minIdle}" />
+        <property name="maxActive" value="${mysql.maxActive}" />
+
+        <property name="maxWait" value="${mysql.maxWait}" />
+        <property name="minEvictableIdleTimeMillis" value="${mysql.minEvictableIdleTimeMillis}" />
+
+        <property name="validationQuery" value="${mysql.validationQuery}" />
+        <property name="testWhileIdle" value="${mysql.testWhileIdle}" />
+        <property name="testOnBorrow" value="${mysql.testOnBorrow}" />
+        <property name="testOnReturn" value="${mysql.testOnReturn}" />
+
+        <property name="poolPreparedStatements" value="${mysql.poolPreparedStatements}" />
+        <property name="maxOpenPreparedStatements" value="${mysql.maxOpenPreparedStatements}" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="${mysql.maxPoolPreparedStatementPerConnectionSize}" />
+        <property name="removeAbandoned" value="${mysql.removeAbandoned}" />
+        <property name="removeAbandonedTimeout" value="${mysql.removeAbandonedTimeout}" />
+        <property name="timeBetweenLogStatsMillis" value="${mysql.timeBetweenLogStatsMillis}" />
+        <property name="timeBetweenEvictionRunsMillis" value="${mysql.timeBetweenEvictionRunsMillis}" />
+        <property name="logAbandoned" value="${mysql.logAbandoned}" />
+        <!--property name="filters" value="${mysql.filters}" /-->
+    </bean>
+    <!-- 定义数据源，继承了spring的动态数据源 -->
+    <bean id="dynamicDataSource" class="com.x.framework.dao.DynamicDataSource" lazy-init="true">
+        <!-- 设置多个数据源 -->
+        <property name="targetDataSources">
+            <map key-type="java.lang.String">
+                <!-- 这些设置的key和determineCurrentLookupKey方法拿到的key相比对, 根据匹配选择数据源 -->
+                <entry key="master" value-ref="securityMasterDataSource"/>
+                <entry key="slave" value-ref="securitySlaveDataSource"/>
+            </map>
+        </property>
+        <!-- 设置默认的数据源，这里默认走写库 -->
+        <property name="defaultTargetDataSource" ref="securityMasterDataSource"/>
+        <property name="methodType">
+            <map key-type="java.lang.String">
+                <entry key="master" value="insert,update,delete"/>
+                <entry key="slave" value="select,find,query,search"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource">
+            <ref bean="dynamicDataSource"/>
+        </property>
+        <property name="fetchSize" value="50"/>
+    </bean>
+    <bean id="xJdbcTemplate" class="com.x.framework.dao.XJdbcTemplate">
+        <property name="dataBaseType" value="MYSQL"/>
+        <property name="jdbcTemplate">
+            <ref bean="jdbcTemplate"/>
+        </property>
+    </bean>
+</beans>

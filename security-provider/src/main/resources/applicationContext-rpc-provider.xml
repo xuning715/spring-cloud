@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                           http://code.alibabatech.com/schema/dubbo
+                           http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="${application.name}">
+        <dubbo:parameter key="dump.directory" value="/opt/provider/xsecurity-service/logs" />
+        <dubbo:parameter key="qos.enable" value="false" />
+    </dubbo:application>
+    <dubbo:registry protocol="zookeeper" address="${zookeeper.address}" timeout="5000" />
+    <dubbo:protocol server="netty4" name="dubbo" port="${zookeeper.port}" />
+    <dubbo:annotation  package="com.x.security.service" />
+</beans>
