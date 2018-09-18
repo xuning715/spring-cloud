@@ -1,0 +1,1 @@
+java -jar spring-cloud-config-1.0-SNAPSHOT.jar

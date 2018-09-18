@@ -1,0 +1,1 @@
+java -jar spring-cloud-hystrix-turbine-dashboard-1.0-SNAPSHOT.jar

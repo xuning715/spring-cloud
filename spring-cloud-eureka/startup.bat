@@ -1,0 +1,1 @@
+java -jar spring-cloud-eureka-1.0-SNAPSHOT.jar
